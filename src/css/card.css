@@ -1,12 +1,3 @@
-/* 
-=========================
-Fonts
-=========================
-
-font-family: 'Outfit', sans-serif;
-
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 /* 
@@ -83,6 +74,9 @@ h1 {
   font: var(--var-heading);
   color: var(--var-lightest);
   padding: 0.5em 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
 
 h2 {
@@ -202,6 +196,11 @@ div.attribution {
 }
 .attribution a {
   color: var(--var-soft-blue);
+}
+.genre {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 2rem;
 }
 
 @media (min-width: 600px) {

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
+
 import Card from './Card';
 
 function Books({ products }) {
     return (
-        <div>
+        <div className='list'>
             {products.map((item) => (
                 <Card
                     key={item.id}
