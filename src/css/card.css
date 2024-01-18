@@ -71,6 +71,7 @@ Font Styling
 */
 
 h1 {
+  font-size: 2rem !important;
   font: var(--var-heading);
   color: var(--var-lightest);
   padding: 0.5em 0;
@@ -103,7 +104,7 @@ Classes
 
 .card-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 2em auto;
   background-color: var(--var-card-dark);
   border-radius: 15px;
@@ -135,43 +136,10 @@ a.hero-image-container {
   display: block;
 }
 
-/* Details */
-
-img.eye {
-  position: absolute;
-  width: 100%;
-  max-width: 2em;
-  top: 44%;
-  left: 43%;
-}
-
 @media (min-width: 400px) {
   img.eye {
     max-width: 3em;
   }
-}
-
-.hero-image-container::after {
-  content: '';
-  background-image: url('https://i.postimg.cc/9MtT4GZY/view.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 5rem;
-  background-color: hsla(178, 100%, 50%, 0.3);
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-}
-
-.hero-image-container:hover::after {
-  opacity: 1;
 }
 
 .small-image {

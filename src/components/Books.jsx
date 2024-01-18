@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-
 import Card from './Card';
+import "../css/books.css"
 
 function Books({ products }) {
     return (
