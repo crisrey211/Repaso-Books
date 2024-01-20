@@ -8,6 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <FiltersProvider>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
   </FiltersProvider>
 )

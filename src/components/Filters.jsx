@@ -1,16 +1,16 @@
 import React from "react"
 import "../css/filters.css"
 
-function Filters() {
-    const [maxPage, setMaxPage] = React.useState(0)
-    const [genre, setGenre] = React.useState("all")
+function Filters({ onChange }) {
+    /* const [maxPage, setMaxPage] = React.useState(0)
+    const [genre, setGenre] = React.useState("all") */
 
     const handleRange = (event) => {
-        setMaxPage(event.target.value)
+        onChange((prevState) => ({ ...prevState, maxPage: event.target.value }))
     }
 
     const handleGenre = (event) => {
-        setGenre(event.target.value)
+        onChange((prevState) => ({ ...prevState, category: event.target.value }))
     }
 
     return (
@@ -18,8 +18,7 @@ function Filters() {
             <div className="filters">
                 <h1>Filtros</h1>
                 <div className="range">
-                    <input type="range" name="page" value={maxPage} min="0" max="1500" onChange={handleRange} />
-                    <label htmlFor="range">{`${maxPage} páginas`}</label>
+                    <input type="range" name="page" min="0" max="1500" onChange={handleRange} />
                 </div >
                 <div>
                     <select
@@ -27,7 +26,7 @@ function Filters() {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         onChange={handleGenre}
                     >
-                        <option selected>Selecciona un género</option>
+                        <option >Selecciona un género</option>
                         <option value="all">Todas</option>
                         <option value="Terror">Terror</option>
                         <option value="Ciencia ficción">Ciencia ficción</option>

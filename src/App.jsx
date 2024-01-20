@@ -3,6 +3,7 @@ import './App.css'
 import Books from './components/Books'
 import Filters from './components/Filters'
 import responseBooks from "./mocks/books.json"
+import { FilterContext } from './context/Filters'
 
 const useBooks = () => {
   const initialBooks = responseBooks.library
@@ -20,13 +21,25 @@ const useBooks = () => {
   return { mappedBooks }
 }
 
+const useFilters = () => {
+  const { filters, setFilters } = React.useContext(FilterContext)
+  const filterProducts = (products) => {
+    return products.filter((product) => {
+      return ((product.genre === filters.category || filters.category === 'all') && product.pages <= filters.maxPage)
+    })
+  }
+  return { filterProducts, setFilters }
+}
 
 function App() {
   const { mappedBooks } = useBooks()
+  const { filterProducts, setFilters } = useFilters()
+  const filteredBooks = filterProducts(mappedBooks)
+
   return (
     <React.Fragment>
-      <Filters />
-      <Books products={mappedBooks} />
+      <Filters onChange={setFilters} />
+      <Books products={filteredBooks} />
     </React.Fragment >
   )
 }
