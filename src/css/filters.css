@@ -1,7 +1,7 @@
 .filters {
   display: flex;
   justify-content: center;
-  width: 40rem;
+  width: 100%;
   gap: 3rem;
   align-items: center;
 }

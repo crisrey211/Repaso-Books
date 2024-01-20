@@ -38,8 +38,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <Filters onChange={setFilters} />
-      <Books products={filteredBooks} />
+      <div className='wrapper'>
+        <Filters onChange={setFilters} />
+        <Books products={filteredBooks} />
+      </div>
     </React.Fragment >
   )
 }
