@@ -28,18 +28,18 @@ const useFilters = () => {
       return ((product.genre === filters.category || filters.category === 'all') && product.pages <= filters.maxPage)
     })
   }
-  return { filterProducts, setFilters }
+  return { filterProducts, setFilters, filters }
 }
 
 function App() {
   const { mappedBooks } = useBooks()
-  const { filterProducts, setFilters } = useFilters()
+  const { filterProducts, setFilters, filters } = useFilters()
   const filteredBooks = filterProducts(mappedBooks)
 
   return (
     <React.Fragment>
       <div className='wrapper'>
-        <Filters onChange={setFilters} />
+        <Filters onChange={setFilters} filters={filters} />
         <Books products={filteredBooks} />
       </div>
     </React.Fragment >

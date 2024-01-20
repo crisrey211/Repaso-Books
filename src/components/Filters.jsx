@@ -1,7 +1,7 @@
 import React from "react"
 import "../css/filters.css"
 
-function Filters({ onChange }) {
+function Filters({ onChange, filters }) {
     /* const [maxPage, setMaxPage] = React.useState(0)
     const [genre, setGenre] = React.useState("all") */
 
@@ -18,7 +18,8 @@ function Filters({ onChange }) {
             <div className="filters">
                 <h1>Filtros</h1>
                 <div className="range">
-                    <input type="range" name="page" min="0" max="1500" onChange={handleRange} />
+                    <input id="price" type="range" name="page" min="0" max="1500" onChange={handleRange} />
+                    <label htmlFor="price">De {filters.maxPage} pag max.</label>
                 </div >
                 <div>
                     <select
