@@ -131,11 +131,6 @@ div.coin-base,
   border-top: 2px solid var(--var-line-dark);
 }
 
-a.hero-image-container {
-  position: relative;
-  display: block;
-}
-
 @media (min-width: 400px) {
   img.eye {
     max-width: 3em;

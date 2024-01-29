@@ -4,6 +4,7 @@ import Books from './components/Books'
 import Filters from './components/Filters'
 import responseBooks from "./mocks/books.json"
 import { FilterContext } from './context/Filters'
+import { Cart } from './components/Cart'
 
 const useBooks = () => {
   const initialBooks = responseBooks.library
@@ -39,6 +40,7 @@ function App() {
   return (
     <React.Fragment>
       <div className='wrapper'>
+        <Cart />
         <Filters onChange={setFilters} filters={filters} />
         <Books products={filteredBooks} />
       </div>
