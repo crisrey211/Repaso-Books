@@ -1,22 +1,24 @@
 /* eslint-disable react/prop-types */
 import "../css/card.css"
+import { useCart } from "../hooks/useCart"
 
 function Card({ title,
     pages,
     genre,
     cover,
     synopsis,
-    year,
-    id,
-    author }) {
+    author, item }) {
+
+    const { addToCart, cart } = useCart()
+
     return (
         <div>
             <div className="card-container">
-                <a href="/" className="hero-image-container">
-                    <img className="hero-image" src={cover} alt="Spinning glass cube" />
-                </a>
+                <img className="hero-image" src={cover} alt="Spinning glass cube" />
                 <main className="main-content">
-                    <h1><a href="#">{title}</a></h1>
+                    <h1>
+                        <button onClick={() => addToCart({ title })}>{title}</button>
+                    </h1>
                     <div className="genre">
                         <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
                             {genre}
